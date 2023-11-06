@@ -1,11 +1,11 @@
 import React, {useRef} from 'react'
-import Link from 'next/link'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai'
 import {TiDeleteOutline} from 'react-icons/ti'
 import toast, { Toast } from 'react-hot-toast'
 import { useStateContext } from '@/context/StateContext'
 import { urlFor } from '@/lib/client'
 import getStripe from '@/lib/getStripe'
+import Link from 'next/link'
 
 const Cart = () => {
   const cartRef = useRef()
@@ -62,15 +62,15 @@ const Cart = () => {
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
             <h3>Your Shopping bag is empty</h3>
-            <link href="/">
-              <button 
-              type='button' 
-              onClick={() => setShowCart(false)}
-              className='btn'
+            <Link href='/'>
+              <button
+                type='button'
+                onClick={()=> setShowCart(false)}
+                className='btn'
               >
                 CONTINUE SHOPPING
               </button>
-            </link>
+            </Link>
           </div>
         )}
         <div className="product-container">
